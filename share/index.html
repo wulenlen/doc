@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mult(...args) {
+        console.log('新一次的计算')
+
+        return args.reduce((prev, ele) => {
+            return prev *= ele
+        }, 1)
+        }
+
+        var proxyMult = (function () {
+        var cache = {}
+        return function (...args) {
+            console.log(cache)
+            if (cache.hasOwnProperty(args)) {
+                return cache[args]
+            }
+            return (cache[args] = mult.apply(this, args))
+        }
+        })()
+
+
+        proxyMult(2, 3, 4) // 新一次的计算 24
+proxyMult(2, 3, 4)
+    </script>
+</body>
+</html>

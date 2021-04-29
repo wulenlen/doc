@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dragover {
+            color: yellowgreen;
+        }
+
+        #dragSource,
+        #dropTarget {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            overflow: hidden;
+        }
+
+        #dropTarget {
+            margin-left: 50px;
+            vertical-align: top;
+        }
+
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dragSource" class="drag" draggable="true">
+        <img src="./img.jpeg" alt="">
+    </div>
+
+    <div class="box">lll</div>
+    <div class="box">kkk</div>
+    <div class="box">uuu</div>
+
+    <div id="dropTarget">啦啦啦啦</div>
+    <script>
+//         var target;
+// // drop 事件处理函数
+// function dropHandle(e){
+//     e.preventDefault()
+// // 获取拖拽的文件
+//  var fileList = e.dataTransfer.files,
+//  fileType;
+//  // 遍历
+//  for(var i=0; i<fileList.length; i++){
+//   fileType = fileList[i].type;
+//   if(fileType.indexOf('image') == -1) {
+//    alert('');
+//    return;
+//   }
+//   // 加载单个文件
+//   loadImg(fileList[i]);
+//  }
+// }
+
+// // 加载
+// function loadImg(file){
+// // 声明接口对象
+// var reader = new FileReader();
+// // 添加load事件处理
+// reader.onload = function(e){
+//  var oImg = document.createElement("img");
+//  oImg.src = this.result;
+//  target.appendChild(oImg);
+// }
+// // 读取文件
+// reader.readAsDataURL(file);
+// }
+
+// window.onload = function() {
+//  // 获取目标元素
+//  target = document.getElementById('dropTarget')
+//  // 给目标元素添加 dragover 事件处理
+//  target.addEventListener('dragover', function(e){
+//   e.preventDefault();
+//  },false);
+ 
+//  target.addEventListener('drop', dropHandle, false);
+// }
+        // function DragStart() {
+        //     var source = document.getElementById("dragSource"); // 拖放源元素
+        //     // 监听dragstart事件，作用在源元素上
+        //     source.addEventListener("dragstart", function(e){
+        //         e.dataTransfer.setData('text/plain', this.innerHTML);
+        //         // 向dataTransfer对象中追加数据
+        //         e.dataTransfer.effectAllowed="copy";
+        //     },false);
+
+        //     DragOver()
+        // }
+
+        // function DragOver() {
+        //     // 拖放目标元素
+        //     var target = document.getElementById('dropTarget');
+        //     var passerBy = Array.from(document.querySelectorAll('.box'))
+        //     // 监听dragover事件，作用在目标元素上
+        //     target.addEventListener("dragover", function(e){
+        //         // 改变样式
+        //         this.className = "dragover";
+        //         // 取消浏览器的默认处理
+        //         e.preventDefault();
+        //     },false);
+
+        //     passerBy.forEach(item => {
+        //         item.addEventListener("dragover", function(e){
+        //         // 改变样式
+        //             this.className += " dragover";
+        //             // 取消浏览器的默认处理
+        //             e.preventDefault();
+        //         },false);
+
+        //         item.addEventListener("dragleave", function() {
+        //             this.classList.remove('dragover')
+        //         },false)
+        //     })
+
+        //     target.addEventListener('drop',function(e){
+        //         var data = e.dataTransfer.getData('text/plain');
+        //         //取得dataTransfer对象中的数据
+        //         this.innerHTML += data;
+        //         e.dataTransfer.dropEffect = "copy";
+        //         // 还原样式
+        //         this.className=""
+        //     },false);
+
+        // }
+
+        // // 添加函数DragStart到window.onload监听事件
+        // window.addEventListener("load",DragStart,false);
+    </script>
+</body>
+</html>
